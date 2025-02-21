@@ -76,23 +76,23 @@ public class Main {
                         while (!salir) {
                             try {
                                 System.out.println("Pon el número de médico que tiene el médico:");
-                                
+
                                 numeroDeMedico = sc.nextInt();
                                 sc.nextLine();
 
                                 if (Medico.validarIDmedico(numeroDeMedico) == -1) {
-                                    System.out.println("El número de médico no es válido. Vuelve a intentarlo.");
+                                    System.out.println("El número de médico no es válido. Vuelve a intentarlo: ");
                                 } else {
 
                                     boolean numeroDuplicado = false;
                                     for (Medico m : listaDeMedicos) {
                                         if (m.getID_medico() == numeroDeMedico) {
                                             numeroDuplicado = true;
-                                           salir = true;
                                         }
                                     }
+
                                     if (numeroDuplicado) {
-                                        System.out.println("Ya existe un médico con ese número. Vuelve a intentarlo.");
+                                        System.out.println("Ya existe un médico con ese número. Vuelve a intentarlo: ");
                                         System.out.println();
                                     } else {
                                         salir = true;
@@ -103,6 +103,7 @@ public class Main {
                                 sc.nextLine();
                             }
                         }
+
 
                         String correoElectronico = "";
                         boolean salir2 = false;
@@ -129,7 +130,7 @@ public class Main {
                                 }
                             }
                         }
-
+                        
                         System.out.println("¿En qué está especializado este médico?");
                         String especialidadMedico = sc.nextLine();
 
@@ -169,7 +170,7 @@ public class Main {
                                 if (!encontrado) {
                                     System.out.println("No se encontró un médico con ese número.");
                                 }
-                               salir3 = true;
+                                salir3 = true;
                             } catch (InputMismatchException e) {
                                 System.out.println("Entrada inválida. Debes ingresar un número.");
                                 sc.nextLine();
@@ -274,10 +275,10 @@ public class Main {
                             System.out.println();
                         } else {
                             System.out.println("Lista de medicos:");
-                        for (Medico lista : listaDeMedicos) {
-                            System.out.println(lista);
-                        }
-                        System.out.println();
+                            for (Medico lista : listaDeMedicos) {
+                                System.out.println(lista);
+                            }
+                            System.out.println();
                         }
                         imprimirMenu();
                         break;
